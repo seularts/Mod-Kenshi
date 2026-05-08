@@ -1,0 +1,126 @@
+@-moz-document url-prefix("https://chatgpt.com/") {
+/* ChatGPT neutral dark theme — stable clean version */
+
+/* Цветовые переменные ChatGPT */
+:root,
+.dark,
+body {
+  --main-surface-primary: #222326 !important;
+  --main-surface-secondary: #252525 !important;
+  --main-surface-tertiary: #292929 !important;
+
+  --sidebar-surface-primary: #222222 !important;
+  --sidebar-surface-secondary: #292a2d !important;
+  --sidebar-surface-tertiary: #303134 !important;
+
+  --composer-surface: #252629 !important;
+  --border-light: #353535 !important;
+}
+
+/* Главный фон */
+html,
+body,
+main,
+.bg-token-main-surface-primary {
+  background-color: #222326 !important;
+}
+
+/* Вторичные блоки */
+.bg-token-main-surface-secondary {
+  background-color: #252525 !important;
+}
+
+/* Левая панель */
+.bg-token-sidebar-surface-primary {
+  background-color: #222222 !important;
+}
+
+/* Левая панель — выбранный чат */
+.bg-token-sidebar-surface-secondary,
+[class*="bg-token-sidebar-surface-secondary"],
+aside [aria-current="page"],
+nav [aria-current="page"] {
+  background-color: #292a2d !important;
+}
+
+/* Левая панель — наведение на чат */
+.bg-token-sidebar-surface-tertiary,
+[class*="bg-token-sidebar-surface-tertiary"],
+[class*="hover:bg-token-sidebar-surface-secondary"]:hover,
+[class*="hover:bg-token-sidebar-surface-tertiary"]:hover,
+aside a:hover,
+aside button:hover,
+nav a:hover,
+nav button:hover {
+  background-color: #303134 !important;
+}
+
+/* Поле ввода — только внешний цвет composer, без трогания текста */
+.bg-token-composer-surface,
+[class*="bg-token-composer-surface"] {
+  background-color: #252629 !important;
+}
+
+/* Границы */
+.border-token-border-light {
+  border-color: #353535 !important;
+}
+
+/* Блоки обычных ответов ChatGPT */
+[data-message-author-role="assistant"] .markdown {
+  background-color: #232427 !important;
+  border: 1px solid #303134 !important;
+  border-radius: 16px !important;
+  padding: 14px 18px !important;
+}
+
+/* Маленький inline-code внутри обычного текста: form, main, code */
+[data-message-author-role="assistant"] .markdown p code,
+[data-message-author-role="assistant"] .markdown li code,
+[data-message-author-role="assistant"] .markdown td code {
+  background-color: #2d2e31 !important;
+  border: 1px solid #3f4044 !important;
+  border-radius: 4px !important;
+}
+
+/* Внешний контейнер большого code block */
+[data-message-author-role="assistant"] .markdown div[class*="contain-inline-size"] {
+  background-color: #1b1c1e !important;
+  border: 1px solid #303134 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+/* Шапка большого code block, где написано CSS */
+[data-message-author-role="assistant"] .markdown .flex.items-center.justify-between,
+[data-message-author-role="assistant"] .markdown .flex.items-center.text-token-text-secondary,
+[data-message-author-role="assistant"] .markdown [class*="justify-between"][class*="text-token-text-secondary"] {
+  background-color: #1b1c1e !important;
+  border-color: #1b1c1e !important;
+}
+
+/* Тело большого code block */
+[data-message-author-role="assistant"] .markdown pre {
+  background-color: #1b1c1e !important;
+  margin: 0 !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+
+/* Сам код внутри большого окна — убираем стиль маленьких inline-плашек */
+[data-message-author-role="assistant"] .markdown pre code {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* Убрать светлую горизонтальную полосу прокрутки в code block */
+[data-message-author-role="assistant"] .markdown pre::-webkit-scrollbar,
+[data-message-author-role="assistant"] .markdown [class*="overflow"]::-webkit-scrollbar {
+  height: 0 !important;
+  display: none !important;
+}
+
+
+}
